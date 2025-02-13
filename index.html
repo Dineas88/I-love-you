@@ -3,29 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For My Gorgeous Baby ❤️</title>
+    <title>For My Sayang, Priya ❤️</title>
     <style>
         body {
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background: linear-gradient(to right, #ff758c, #ff7eb3);
+            background: url('https://source.unsplash.com/1600x900/?roses,romantic') center/cover no-repeat;
             font-family: 'Poppins', sans-serif;
             text-align: center;
             overflow: hidden;
         }
         .container {
             position: relative;
-            background: rgba(255, 255, 255, 0.2);
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.3);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            max-width: 600px;
         }
         h1 {
             font-size: 3rem;
             color: white;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
         }
         .message {
             font-size: 1.5rem;
@@ -60,7 +61,7 @@
             left: calc(50% - 50px);
             transform: translate(-50px, -50px);
         }
-        .hearts {
+        .hearts, .fireworks {
             position: absolute;
             width: 100%;
             height: 100%;
@@ -83,14 +84,15 @@
 </head>
 <body>
     <div class="container">
-        <h1>Priya, My Love ❤️</h1>
-        <p class="message">You make my world beautiful. Will you be my Valentine? 💕</p>
+        <h1>Priya, my Sayang ❤️</h1>
+        <p class="message">From the moment I met you, my life changed. You are the most beautiful, kind, and loving person I know. You are my happiness, my sunshine, and my greatest treasure. Every moment with you is precious, and I cherish you more than words can say. Will you be my Valentine? 💕</p>
         <div class="buttons">
-            <button class="yes" onclick="alert('Yay! Love you, Sayang! ❤️')">Yes</button>
+            <button class="yes" onclick="showFireworks()">Yes</button>
             <button class="no">No</button>
         </div>
     </div>
     <div class="hearts"></div>
+    <div class="fireworks"></div>
     <script>
         document.querySelector('.no').addEventListener('mouseover', function() {
             let x = Math.random() * window.innerWidth * 0.8;
@@ -107,6 +109,23 @@
             setTimeout(() => heart.remove(), 5000);
         }
         setInterval(createHeart, 250);
+        
+        function showFireworks() {
+            alert('Yay! Love you, Sayang! ❤️');
+            const fireworksContainer = document.querySelector('.fireworks');
+            for (let i = 0; i < 10; i++) {
+                setTimeout(() => {
+                    const firework = document.createElement('div');
+                    firework.classList.add('heart');
+                    firework.style.left = Math.random() * 100 + 'vw';
+                    firework.style.bottom = '0';
+                    firework.style.animation = 'float 1s ease-out';
+                    firework.style.backgroundColor = 'gold';
+                    fireworksContainer.appendChild(firework);
+                    setTimeout(() => firework.remove(), 1000);
+                }, i * 200);
+            }
+        }
     </script>
 </body>
 </html>
